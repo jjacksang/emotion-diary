@@ -70,7 +70,7 @@ const dummyData = [
     },
 ];
 
-function App() {
+const App = () => {
     const [data, dispatch] = useReducer(reducer, dummyData);
 
     const dataId = useRef(0);
@@ -122,6 +122,6 @@ function App() {
             </DiaryDispatchContext.Provider>
         </DiaryStateContext.Provider>
     );
-}
+};
 
 export default App;

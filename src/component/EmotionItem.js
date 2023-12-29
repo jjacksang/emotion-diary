@@ -1,4 +1,4 @@
-const EmotionItem = (emotion_id, emotion_img, emotion_descript, onClick, isSelected) => {
+const EmotionItem = ({ emotion_id, emotion_img, emotion_descript, onClick, isSelected }) => {
     return (
         <div
             onClick={() => onClick(emotion_id)}

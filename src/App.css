@@ -158,6 +158,7 @@ header button {
     cursor: pointer;
     min-width: 120px;
     height: 80px;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
 }

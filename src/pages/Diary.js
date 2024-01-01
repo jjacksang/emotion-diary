@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { DiaryStateContext } from "../App";
 
 import { emotionList } from "../utill/emotion";
-import { getStringDate } from "../utill/date";
+import { getStringDate, getDayOfWeek } from "../utill/date";
 
 import MyHeader from "../component/MyHeader";
 import MyButton from "../component/MyButton";
@@ -40,12 +40,12 @@ const Diary = () => {
         const curEmotionData = emotionList.find(
             (it) => parseInt(it.emotion_id) === parseInt(data.emotion)
         );
-        console.log(curEmotionData);
+        const dayOfWeek = getDayOfWeek(new Date(data.date));
 
         return (
             <div className="DiaryPage">
                 <MyHeader
-                    headText={`${getStringDate(new Date(data.date))} 기록`}
+                    headText={`${getStringDate(new Date(data.date))} (${dayOfWeek}) 기록`}
                     leftChild={<MyButton text={"< 뒤로가기"} onClick={() => navigate(-1)} />}
                     rightChild={
                         <MyButton text={"수정하기"} onClick={() => navigate(`/edit/${data.id}`)} />
